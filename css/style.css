@@ -39,37 +39,202 @@ font-family: 'Source Sans Pro', sans-serif;
 */
 
 
-/* GERAL */
-
-/* GERAL */
+:root {
+    --background-defaultColor:  rgba(0,0,0,.75);
+    --background-image: url(../img/background-image.jpg);
+    --font-familyDefault: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    --primary-color: #8c8c8c;
+}
 
 
 /* BODY */
 body{
-	
+	background-image: var(--background-image);
+    font-family: var(--font-familyDefault);
+    overflow: hidden;
 }
-/* BODY */
+
+ body:after{
+    content:'';
+    position:absolute;
+    top:0;
+    z-index: -1;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,.6);
+} 
 
 
 /* HEADER */
-header{
-	
+header, h1{
+	margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    color: #E62213;
+    font-size: 48px; 
+    text-transform: uppercase; 
+
+}
+
+header:hover {
+    cursor: pointer;
 }
 /* HEADER */
-
 
 /* FOOTER */
-footer{}
+footer{
+
+}
 /* FOOTER */
 
 
 /* PÁGINA INICIAL */
 main{
-	
+
 }
 /* PÁGINA INICIAL */
 
 
 /* EXTRAS */
+.form {
+    background-color: var(--background-defaultColor);
+    width: 310px;
+    height: 570px;
+    padding: 35px 68px 40px;
+    margin: 0 auto;
+    border-radius: 2px;
+}
 
-/* EXTRAS */
+.form-title {
+    color: white;
+    font-size: 31px;
+    margin-top: 2px;
+}
+
+button.submit {
+    margin-top: 23px;
+    margin-bottom: 20px;
+    color: white;
+    background-color:#E62213;
+    border-radius: 5px;
+    width: 321px;
+    height: 48px;
+    border: 0;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form__control {
+   background-color: #595959;
+   width: 314px;
+   height: 48px;
+   opacity: 0.6;
+   border-radius: 5px;
+   color: white;
+   margin-bottom:10px;
+   opacity: 1;
+}
+
+.form__control:invalid {
+    border-bottom: rgb(255, 111, 0) solid 5px;
+}
+
+::placeholder {
+    color: var(--primary-color);
+    padding: 20px;
+    font-size: 16px;
+}
+
+.checkbox {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+ .link-help {
+    position: relative;
+    left: 95px;  
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+.link-help:link {
+    text-decoration: none;   
+}
+.link-help:hover {
+    text-decoration: underline;   
+}
+.link_connect {
+    text-decoration: none;  
+    color:var(--primary-color);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--font-familyDefault);
+    margin-left: 5px;
+}
+
+.link_assine {
+    text-decoration: none;  
+    color: white;
+}
+.link_assine:hover {
+    text-decoration: underline;  
+}
+.link_connect:link{
+    text-decoration: none;
+}
+
+.link_footer {
+    text-decoration: none;  
+    color: #0071eb;
+}
+.link_footer:hover {
+    text-decoration: underline;  
+}
+
+.div__major {
+    position: relative;
+    left: 50.2%;
+    transform: translatex(-50%);
+    width: 314px;
+    height: 85px;
+    bottom: 260px;
+}
+
+.div__major--connect{
+    color: var(--primary-color);
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-top: 1px;
+}
+
+.div__major--assine{
+    color:var(--primary-color);
+    font-weight: 200;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.div__major--footer{
+    color: var(--primary-color);
+    font-size: var(--font-sizefooter);
+    --font-sizefooter: 13px;  /*exemplo dentro do mesmo escopo*/
+}
+
+i {
+    color: blue;
+    size: 16px;
+}
+
+#checkbox {
+    background-color: gray;
+}
+
+input:invalid + p::after {
+    content: 'Informe um email ou número de telefone válido.';
+    color: orange;
+    font-size: 13px;
+    margin-top: none;
+  }
+
